@@ -1,5 +1,4 @@
-import re
-import os
+import readline
 
 def convert_str_to_digit(text: str):
     match text:
@@ -24,10 +23,11 @@ def convert_str_to_digit(text: str):
         case _:
             return int(text)
         
-with open("2023/p1/input.txt") as f:
-    sum = 0
-    for line in f.readlines():
-        digit1 = convert_str_to_digit(re.findall(r"\d|one|two|three|four|five|six|seven|eight|nine", line)[0])
-        digit2 = convert_str_to_digit(re.findall(r"\d|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin", line[::-1])[0][::-1])
-        sum += digit1 * 10 + digit2
-    print(sum)
+def solve():    
+    with open("2023/p1/input.txt") as f:
+        sum = 0
+        for line in f.readlines():
+            digit1 = convert_str_to_digit(re.findall(r"\d|one|two|three|four|five|six|seven|eight|nine", line)[0])
+            digit2 = convert_str_to_digit(re.findall(r"\d|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin", line[::-1])[0][::-1])
+            sum += digit1 * 10 + digit2
+        print(sum)

@@ -48,8 +48,9 @@ def get_game_power(line: str):
                     min_blue = max(min_blue, count)
     return min_red * min_green * min_blue
 
-with open("2023/p2/input.txt") as f:
-    total = 0
-    for line in f.readlines():
-        total += get_game_power(line)
-    print(total)
+def solve():
+    with open("2023/p2/input.txt") as f:
+        total = 0
+        for line in f.readlines():
+            total += get_game_power(line)
+        print(total)
